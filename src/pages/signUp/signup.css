@@ -1,15 +1,3 @@
-/* ---------- Theme tokens ---------- */
-:root {
-  --bg: #0f172a; /* background */
-  --panel: #111827; /* surface */
-  --text: #e5e7eb; /* text primary */
-  --subtle: #94a3b8; /* secondary text */
-  --border: #374151; /* hairline */
-  --accent: #22d3ee; /* focus / CTA */
-  --success: #22c55e;
-  --danger: #f87171;
-}
-
 /* ---------- Layout shell ---------- */
 .su-root {
   min-height: 100vh;

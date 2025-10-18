@@ -1,7 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
-import Login from "../pages/Login";
-import Signup from "../pages/Signup";
 import Dashboard from "../pages/Dashboard";
 import ProtectedRoute from "./ProtectedRoute";
 import NotFound from "../pages/NotFound";
@@ -9,6 +7,8 @@ import AccessDenied from "../pages/AccessDenied";
 import AdminDashboard from "../pages/AdminDashboard";
 import SignupPage from "../pages/signUp/SignupPage";
 import SigninPage from "../pages/signIn/SigninPage";
+import ResetPasswordPage from "../pages/resetPassword/ResetPasswordPage";
+import ForgotPasswordPage from "../pages/forgotePassword/ForgotPasswordPage";
 
 function Routing() {
   return (
@@ -17,6 +17,8 @@ function Routing() {
         <Route path="/" element={<Home />} />
         <Route path="/signin" element={<SigninPage />} />
         <Route path="/signup" element={<SignupPage />} />
+        <Route path="/reset-password" element={<ResetPasswordPage />} />
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route
           path="/dashboard"
           element={

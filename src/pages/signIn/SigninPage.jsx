@@ -192,9 +192,9 @@ export default function SigninPage() {
                 <label className="si-check">
                   <input type="checkbox" /> <span>Remember me</span>
                 </label>
-                <a href="#" className="si-link">
+                <Link to="/forgot-password" className="si-link">
                   Forgot password?
-                </a>
+                </Link>
               </div>
 
               {/* CTA */}
