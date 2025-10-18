@@ -25,7 +25,7 @@ function Routing() {
             <Route path="/forgot-password" element={<ForgotPasswordPage />} />
           </>
         )}
-        <Route
+        {/* <Route
           path="/dashboard"
           element={
             <ProtectedRoute allowedRoles={["user", "admin"]}>
@@ -40,7 +40,7 @@ function Routing() {
               <AdminDashboard />
             </ProtectedRoute>
           }
-        />
+        /> */}
         <Route path="/access-denied" element={<AccessDenied />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>

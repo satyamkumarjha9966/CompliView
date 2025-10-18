@@ -14,7 +14,7 @@ function Navbar() {
         >
           Home
         </NavLink>
-        {token && (
+        {/* {token && (
           <NavLink
             to="/dashboard"
             style={({ isActive }) => ({ fontWeight: isActive ? "700" : "400" })}
@@ -29,27 +29,7 @@ function Navbar() {
           >
             Admin Dashboard
           </NavLink>
-        )}
-        {!token && (
-          <>
-            <NavLink
-              to="/signup"
-              style={({ isActive }) => ({
-                fontWeight: isActive ? "700" : "400",
-              })}
-            >
-              Sign Up
-            </NavLink>
-            <NavLink
-              to="/signin"
-              style={({ isActive }) => ({
-                fontWeight: isActive ? "700" : "400",
-              })}
-            >
-              Login
-            </NavLink>
-          </>
-        )}
+        )} */}
       </nav>
     </>
   );
