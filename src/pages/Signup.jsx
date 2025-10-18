@@ -18,7 +18,7 @@ export default function Signup() {
     setLoading(false);
     if (res.success) {
       // For now navigate to login. Optionally you could auto sign-in.
-      navigate("/login");
+      navigate("/signin");
     } else {
       setError(res.error || "Sign up failed");
     }

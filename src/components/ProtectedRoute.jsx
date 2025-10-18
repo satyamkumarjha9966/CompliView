@@ -12,7 +12,7 @@ export default function ProtectedRoute({ children, allowedRoles = [] }) {
 
   // Not authenticated -> redirect to login
   if (!token) {
-    return <Navigate to="/login" replace />;
+    return <Navigate to="/signin" replace />;
   }
 
   // If allowedRoles provided and user's role is not included -> redirect to home

@@ -10,7 +10,7 @@ function App() {
   const navigate = useNavigate();
   const isUserLoggedIn = () => {
     if (!token) {
-      navigate("/login");
+      navigate("/signin");
     }
   };
 
@@ -19,7 +19,7 @@ function App() {
   }, []);
   return (
     <>
-      <Navbar />
+      {token && <Navbar />}
       <Routing />
     </>
   );

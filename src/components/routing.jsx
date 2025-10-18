@@ -7,14 +7,16 @@ import ProtectedRoute from "./ProtectedRoute";
 import NotFound from "../pages/NotFound";
 import AccessDenied from "../pages/AccessDenied";
 import AdminDashboard from "../pages/AdminDashboard";
+import SignupPage from "../pages/signUp/SignupPage";
+import SigninPage from "../pages/signIn/SigninPage";
 
 function Routing() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/signin" element={<SigninPage />} />
+        <Route path="/signup" element={<SignupPage />} />
         <Route
           path="/dashboard"
           element={

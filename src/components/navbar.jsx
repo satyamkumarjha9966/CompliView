@@ -41,7 +41,7 @@ function Navbar() {
               Sign Up
             </NavLink>
             <NavLink
-              to="/login"
+              to="/signin"
               style={({ isActive }) => ({
                 fontWeight: isActive ? "700" : "400",
               })}
