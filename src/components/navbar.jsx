@@ -6,7 +6,7 @@ function Navbar() {
   const { token, user } = useSelector((state) => state.auth);
   return (
     <>
-      <nav style={{ display: "flex", gap: "1rem", marginBottom: "1rem" }}>
+      <nav style={{ display: "flex", gap: "1rem" }}>
         <NavLink
           to="/"
           end
