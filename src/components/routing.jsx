@@ -1,10 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
-import Dashboard from "../pages/Dashboard";
-import ProtectedRoute from "./ProtectedRoute";
 import NotFound from "../pages/NotFound";
 import AccessDenied from "../pages/AccessDenied";
-import AdminDashboard from "../pages/AdminDashboard";
 import SignupPage from "../pages/signUp/SignupPage";
 import SigninPage from "../pages/signIn/SigninPage";
 import ResetPasswordPage from "../pages/resetPassword/ResetPasswordPage";
@@ -16,7 +13,12 @@ function Routing() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
+        {token && (
+          <>
+            <Route path="/" element={<Home />} />
+            <Route path="/client/:id" element={<Home />} />
+          </>
+        )}
         {!token && (
           <>
             <Route path="/signin" element={<SigninPage />} />
