@@ -1,12 +1,3 @@
-/* ================= Theme tokens (dark, matches earlier pages) ================= */
-:root {
-  --text: #0f172a; /* (used in light chips) */
-  --border: #e5e7eb1f; /* subtle hairline on light panels */
-  --success: #22c55e;
-  --danger: #ef4444;
-  --warn: #f59e0b;
-}
-
 /* ================= Page shell ================= */
 .cd-root {
   min-height: 100vh;
