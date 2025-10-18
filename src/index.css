@@ -25,6 +25,12 @@
   --accent: #22d3ee; /* focus / CTA */
   --success: #22c55e;
   --danger: #f87171;
+  --chip: #0b1220; /* chip bg base */
+  --risk-high: #ef4444; /* red-500 */
+  --risk-med: #f59e0b; /* amber-500 */
+  --risk-low: #22c55e; /* green-500 */
+  --surface: #111827; /* panels */
+  --fg: #e5e7eb; /* primary text */
 }
 
 a {

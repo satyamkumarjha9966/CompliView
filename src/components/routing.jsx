@@ -7,6 +7,7 @@ import SigninPage from "../pages/signIn/SigninPage";
 import ResetPasswordPage from "../pages/resetPassword/ResetPasswordPage";
 import ForgotPasswordPage from "../pages/forgotePassword/ForgotPasswordPage";
 import { useSelector } from "react-redux";
+import ClientDashboard from "../pages/clientDashboard/ClientDashboard";
 
 function Routing() {
   const { token } = useSelector((state) => state.auth);
@@ -16,7 +17,7 @@ function Routing() {
         {token && (
           <>
             <Route path="/" element={<Home />} />
-            <Route path="/client/:id" element={<Home />} />
+            <Route path="/client/:id" element={<ClientDashboard />} />
           </>
         )}
         {!token && (
