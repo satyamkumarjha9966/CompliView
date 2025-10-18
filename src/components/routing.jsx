@@ -9,16 +9,22 @@ import SignupPage from "../pages/signUp/SignupPage";
 import SigninPage from "../pages/signIn/SigninPage";
 import ResetPasswordPage from "../pages/resetPassword/ResetPasswordPage";
 import ForgotPasswordPage from "../pages/forgotePassword/ForgotPasswordPage";
+import { useSelector } from "react-redux";
 
 function Routing() {
+  const { token } = useSelector((state) => state.auth);
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/signin" element={<SigninPage />} />
-        <Route path="/signup" element={<SignupPage />} />
-        <Route path="/reset-password" element={<ResetPasswordPage />} />
-        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+        {!token && (
+          <>
+            <Route path="/signin" element={<SigninPage />} />
+            <Route path="/signup" element={<SignupPage />} />
+            <Route path="/reset-password" element={<ResetPasswordPage />} />
+            <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+          </>
+        )}
         <Route
           path="/dashboard"
           element={
