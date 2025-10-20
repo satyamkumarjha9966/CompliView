@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import "./forgot.css";
 import { Link, useNavigate } from "react-router-dom";
+import { forgotPassword } from "../../apis/auth";
 
 export default function ForgotPasswordPage() {
   const navigate = useNavigate();
@@ -8,23 +9,32 @@ export default function ForgotPasswordPage() {
   const [submitting, setSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
+  const [apiError, setApiError] = useState(null);
 
   const emailOk = useMemo(
     () => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(email || ""),
     [email]
   );
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     if (!email) return setError("Email is required.");
     if (!emailOk) return setError("Invalid email.");
     setError("");
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
-      setSent(true);
-    }, 900);
-    navigate("/reset-password");
+    // setTimeout(() => {
+    //   setSubmitting(false);
+    //   setSent(true);
+    // }, 900);
+    const res = await forgotPassword({ email });
+    if (res.success) {
+        setSubmitting(false);
+        setSent(true);
+        // navigate("/reset-password");
+    } else {
+        setSubmitting(false);
+        setApiError(res.error || "Error in Forgot Password.");
+    }
   };
 
   return (

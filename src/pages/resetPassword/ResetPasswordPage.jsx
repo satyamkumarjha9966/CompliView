@@ -1,9 +1,11 @@
 import React, { useMemo, useState } from "react";
 import "./reset.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { resetPassword } from "../../apis/auth";
 
 export default function ResetPasswordPage() {
   const navigate = useNavigate();
+  const { resetToken } = useParams();
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
   const [show, setShow] = useState({ p: false, c: false });
@@ -32,15 +34,25 @@ export default function ResetPasswordPage() {
     return Object.keys(er).length === 0;
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
     setSubmitting(true);
-    setTimeout(() => {
+    const res = await resetPassword({ password, confirm, resetToken });
+    if (res.success) {
       setSubmitting(false);
       setDone(true);
       navigate("/signin");
-    }, 900);
+    } else {
+      setSubmitting(false);
+      const errMsg = res.error || "Error in resetting password.";
+      setErrors({ password: errMsg, confirm: errMsg });
+    }
+    // setTimeout(() => {
+    //   setSubmitting(false);
+    //   setDone(true);
+    //   navigate("/signin");
+    // }, 900);
   };
 
   const bar = (i) => "rp-bar" + (strength >= i ? " on" : "");

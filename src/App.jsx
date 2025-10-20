@@ -10,7 +10,9 @@ function App() {
   const navigate = useNavigate();
   const isUserLoggedIn = () => {
     if (!token) {
-      navigate("/signin");
+      if (!window.location.pathname.startsWith("/reset-password")) {
+        navigate("/signin");
+      }
     }
   };
 

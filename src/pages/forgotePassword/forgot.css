@@ -259,3 +259,9 @@
   background: var(--success);
   margin-top: 6px;
 }
+.sent-ml {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: var(--success);
+  text-align: center;
+}

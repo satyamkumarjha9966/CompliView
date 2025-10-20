@@ -3,6 +3,7 @@ import "./signin.css";
 import { Link, useNavigate } from "react-router-dom";
 import { signIn } from "../../apis/auth";
 import { useDispatch } from "react-redux";
+import { setToken, setUser } from "../../store/slices/authSlice";
 
 export default function SigninPage() {
   const dispatch = useDispatch();
