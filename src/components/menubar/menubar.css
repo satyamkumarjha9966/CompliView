@@ -1,0 +1,177 @@
+/* ----------------- Theme tokens (dark) ----------------- */
+:root {
+  --nav-bg: rgba(15, 23, 42, 0.92); /* slate-900/92 */
+  --nav-border: rgba(51, 65, 85, 0.6); /* slate-700/60 */
+  --panel: #111827; /* gray-900 */
+  --text: #e5e7eb; /* gray-200 */
+  --muted: #94a3b8; /* slate-400 */
+  --accent: #22d3ee; /* cyan-400 */
+  --chip: rgba(34, 211, 238, 0.18);
+  --ring: rgba(34, 211, 238, 0.45);
+  --danger: #ef4444;
+}
+
+/* ----------------- Header shell ----------------- */
+.cv-nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  width: 100%;
+  background: var(--nav-bg);
+  backdrop-filter: saturate(140%) blur(8px);
+  border-bottom: 1px solid var(--nav-border);
+}
+.cv-row {
+  max-width: 1120px;
+  margin: 0 auto;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+}
+@media (min-width: 768px) {
+  .cv-row {
+    padding: 0 24px;
+  }
+}
+
+/* ----------------- Brand ----------------- */
+.cv-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
+  text-decoration: none;
+}
+.cv-logo {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  color: #67e8f9;
+  background: rgba(34, 211, 238, 0.18);
+  outline: 1px solid rgba(34, 211, 238, 0.35);
+}
+.cv-logo svg {
+  width: 16px;
+  height: 16px;
+}
+.cv-name {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  font-size: 0.95rem;
+}
+.cv-accent {
+  color: #67e8f9;
+}
+
+/* ----------------- Actions / profile ----------------- */
+.cv-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cv-avatar-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 10px;
+  color: var(--text);
+  background: rgba(30, 41, 59, 0.75);
+  border: 1px solid var(--nav-border);
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+.cv-avatar-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--ring);
+}
+.cv-avatar-btn:hover {
+  background: rgba(51, 65, 85, 0.7);
+}
+
+.cv-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: #1f2937;
+  color: var(--text);
+}
+.cv-avatar svg {
+  width: 16px;
+  height: 16px;
+}
+.cv-caret {
+  width: 16px;
+  height: 16px;
+  color: #94a3b8;
+}
+
+/* ----------------- Dropdown ----------------- */
+.cv-profwrap {
+  position: relative;
+}
+.cv-menu {
+  position: absolute;
+  right: 0;
+  margin-top: 8px;
+  width: 180px;
+  padding: 6px;
+  background: rgba(30, 41, 59, 0.96);
+  border: 1px solid var(--nav-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  border-radius: 10px;
+}
+.cv-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  color: var(--text);
+  background: transparent;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.92rem;
+}
+.cv-item svg {
+  width: 16px;
+  height: 16px;
+  color: #a3b2c3;
+}
+.cv-item:hover,
+.cv-item:focus {
+  background: rgba(71, 85, 105, 0.6);
+  outline: none;
+}
+.cv-item.danger {
+  color: #fecaca;
+}
+.cv-item.danger svg {
+  color: #fca5a5;
+}
+.cv-item.danger:hover,
+.cv-item.danger:focus {
+  background: rgba(239, 68, 68, 0.12);
+}
+
+.cv-sep {
+  height: 1px;
+  background: var(--nav-border);
+  margin: 6px 4px;
+  border-radius: 1px;
+}
+
+/* ----------------- Utilities (optional) ----------------- */
+.cv-hide {
+  display: none !important;
+}

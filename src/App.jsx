@@ -1,9 +1,9 @@
 import "./App.css";
 import Routing from "./components/routing";
-import Navbar from "./components/navbar";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import MenuBar from "./components/menubar/MenuBar";
 
 function App() {
   const { token, user } = useSelector((state) => state.auth);
@@ -21,7 +21,7 @@ function App() {
   }, []);
   return (
     <>
-      {token && <Navbar />}
+      {token && <MenuBar />}
       <Routing />
     </>
   );
