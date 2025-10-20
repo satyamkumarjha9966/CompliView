@@ -1,13 +1,15 @@
 import "./App.css";
 import Routing from "./components/routing";
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import MenuBar from "./components/menubar/MenuBar";
+import { clearAuth } from "./store/slices/authSlice";
 
 function App() {
-  const { token, user } = useSelector((state) => state.auth);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { token, user } = useSelector((state) => state.auth);
   const isUserLoggedIn = () => {
     if (!token) {
       if (!window.location.pathname.startsWith("/reset-password")) {
@@ -16,12 +18,17 @@ function App() {
     }
   };
 
+  const handleLogout = () => {
+    dispatch(clearAuth());
+    navigate("/signin");
+  };
+
   useEffect(() => {
     isUserLoggedIn();
   }, []);
   return (
     <>
-      {token && <MenuBar />}
+      {token && <MenuBar onLogout={handleLogout} />}
       <Routing />
     </>
   );
