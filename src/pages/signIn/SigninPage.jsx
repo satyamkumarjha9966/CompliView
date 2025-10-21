@@ -70,7 +70,7 @@ export default function SigninPage() {
         {/* Left: brand / context */}
         <aside className="si-brand si-cont-cntr" aria-hidden="true">
           <div className="si-brand-inner">
-            <h2 className="si-brand-title">CompileView Explorer</h2>
+            <h2 className="si-brand-title">CompliView Explorer</h2>
             <p className="si-brand-sub">
               Query billions of cells. Traverse trees in milliseconds.
             </p>

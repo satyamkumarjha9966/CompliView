@@ -93,7 +93,7 @@ export default function SignupPage() {
         {/* Left brand / context */}
         <aside className="su-brand su-cont-cntr" aria-hidden="true">
           <div className="su-brand-inner">
-            <h2 className="su-brand-title">CompileView Explorer</h2>
+            <h2 className="su-brand-title">CompliView Explorer</h2>
             <p className="su-brand-sub">
               Inspect millions of rows, pivot complex hierarchies, and stream
               insights in real-time.

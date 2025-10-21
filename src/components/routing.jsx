@@ -8,6 +8,7 @@ import ResetPasswordPage from "../pages/resetPassword/ResetPasswordPage";
 import ForgotPasswordPage from "../pages/forgotePassword/ForgotPasswordPage";
 import { useSelector } from "react-redux";
 import ClientDashboard from "../pages/clientDashboard/ClientDashboard";
+import ViewProfilePage from "../pages/profile/ViewProfilePage";
 
 function Routing() {
   const { token } = useSelector((state) => state.auth);
@@ -18,13 +19,17 @@ function Routing() {
           <>
             <Route path="/" element={<Home />} />
             <Route path="/client/:id" element={<ClientDashboard />} />
+            <Route path="/profile" element={<ViewProfilePage />} />
           </>
         )}
         {!token && (
           <>
             <Route path="/signin" element={<SigninPage />} />
             <Route path="/signup" element={<SignupPage />} />
-            <Route path="/reset-password/:resetToken" element={<ResetPasswordPage />} />
+            <Route
+              path="/reset-password/:resetToken"
+              element={<ResetPasswordPage />}
+            />
             <Route path="/forgot-password" element={<ForgotPasswordPage />} />
           </>
         )}

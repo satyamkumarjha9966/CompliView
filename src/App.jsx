@@ -23,12 +23,21 @@ function App() {
     navigate("/signin");
   };
 
+  const handleProfilePageNavigation = () => {
+    navigate("/profile");
+  };
+
   useEffect(() => {
     isUserLoggedIn();
   }, []);
   return (
     <>
-      {token && <MenuBar onLogout={handleLogout} />}
+      {token && (
+        <MenuBar
+          onLogout={handleLogout}
+          onProfile={handleProfilePageNavigation}
+        />
+      )}
       <Routing />
     </>
   );

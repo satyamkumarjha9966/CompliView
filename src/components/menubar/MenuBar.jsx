@@ -63,7 +63,7 @@ export default function MenuBar({ onProfile, onSettings, onLogout }) {
             </svg>
           </span>
           <span className="cv-name">
-            Compile<span className="cv-accent">View</span>
+            Compli<span className="cv-accent">View</span>
           </span>
         </Link>
 
@@ -128,7 +128,7 @@ export default function MenuBar({ onProfile, onSettings, onLogout }) {
                   </svg>
                   View Profile
                 </button>
-                <button
+                {/* <button
                   role="menuitem"
                   className="cv-item"
                   onClick={onSettings}
@@ -140,7 +140,7 @@ export default function MenuBar({ onProfile, onSettings, onLogout }) {
                     />
                   </svg>
                   Settings
-                </button>
+                </button> */}
                 <div className="cv-sep" aria-hidden />
                 <button
                   role="menuitem"
