@@ -30,14 +30,14 @@ const authSlice = createSlice({
   reducers: {
     // ✅ Set only token
     setToken(state, action) {
-      state.token = action.payload;
       localStorage.setItem("token", action.payload);
+      state.token = action.payload;
     },
 
     // ✅ Set only user
     setUser(state, action) {
-      state.user = action.payload;
       localStorage.setItem("user", JSON.stringify(action.payload));
+      state.user = action.payload;
     },
 
     // ✅ Clear everything

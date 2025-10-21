@@ -57,9 +57,7 @@ export default function SigninPage() {
       if (token) dispatch(setToken(token));
       if (user) dispatch(setUser(user));
       setSuccess(true);
-      setTimeout(() => {
-        navigate("/");
-      }, 1500);
+      navigate("/");
     } else {
       setApiError(res.error || "Sign in failed");
     }
@@ -72,7 +70,7 @@ export default function SigninPage() {
         {/* Left: brand / context */}
         <aside className="si-brand si-cont-cntr" aria-hidden="true">
           <div className="si-brand-inner">
-            <h2 className="si-brand-title">Compile-View Explorer</h2>
+            <h2 className="si-brand-title">CompileView Explorer</h2>
             <p className="si-brand-sub">
               Query billions of cells. Traverse trees in milliseconds.
             </p>
